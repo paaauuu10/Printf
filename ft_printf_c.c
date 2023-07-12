@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int	ft_printf_char(char c)
+int	ft_printf_c(char c)
 {
 	int	ret_num;
 	

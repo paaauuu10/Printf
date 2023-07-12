@@ -13,7 +13,7 @@ size_t	ft_strlen(const char *s)
 }
 
 
-int	ft_printf_string(char *str)
+int	ft_printf_s(char *str)
 {
 	int	ret_num;
 	
