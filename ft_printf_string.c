@@ -1,8 +1,7 @@
-#include "./libft/libft.h"
 #include <unistd.h>
 #include <stdio.h>
 
-size_t	ft_strlen(const char *s)
+/*size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
@@ -13,7 +12,7 @@ size_t	ft_strlen(const char *s)
 }
 
 
-int	ft_printf_s(char *str)
+int	ft_printf_string(char *str)
 {
 	int	ret_num;
 	
@@ -21,7 +20,7 @@ int	ft_printf_s(char *str)
 	if (ret_num == -1)
 		return (-1);
 	return (ret_num);	
-}
+}*/
 
 /*int	main()
 {

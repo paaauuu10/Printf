@@ -1,21 +1,28 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/09/28 10:44:14 by pbotargu          #+#    #+#              #
+#    Updated: 2023/09/29 14:58:33 by pbotargu         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libftprintf.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-LIBFT_PATH = ./libft
-LIBFT = $(LIBFT_PATH)/libft.a
+HEADER = ft_printf.h
 
-OBJECTS = ft_printf_c.o ft_printf_d.o ft_printf_s.c
+OBJECTS = ft_printf_char.o 
 
 all: $(NAME)
 
-$(LIBFT):
-	$(MAKE) -C $(LIBFT_PATH) all
-
-$(NAME): $(OBJECTS) $(LIBFT)
-	cp	libft/libft.a $(NAME)
-	ar rc $(NAME) $(OBJECTS) $(LIBFT)
+$(NAME): $(OBJECTS) $(HEADER)
+	@ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
 %.o: %.c
@@ -23,12 +30,10 @@ $(NAME): $(OBJECTS) $(LIBFT)
 
 clean:
 	rm -f $(OBJECTS)
-	$(MAKE) -C $(LIBFT_PATH) clean
 
 fclean: clean
 	rm -f $(NAME)
-	$(MAKE) -C $(LIBFT_PATH) fclean
 
 re: fclean all
 
-.PHONY: re  all clean fclean
+.PHONY: re  all clean fclean bonus
