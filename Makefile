@@ -6,34 +6,58 @@
 #    By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/28 10:44:14 by pbotargu          #+#    #+#              #
-#    Updated: 2023/09/29 14:58:33 by pbotargu         ###   ########.fr        #
+#    Updated: 2023/10/19 13:40:59 by pbotargu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+CC = gcc
+FLAGS = -Wall -Wextra -Werror
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+# Nombre del proyecto
+NAME	= libftprintf.a
 
-HEADER = ft_printf.h
+# Archivos que uso al compilar
+FUNCTION	=  ft_printf_char.c baseprintf.c ft_printf_string.c ft_printf_id.c ft_printf_unsigned.c ft_printf_hexa_up.c ft_printf_hexa_low.c ft_printf_hexaptr.c				
 
-OBJECTS = ft_printf_char.o 
+# Tenemos que transformar los .c en .o para poder compilar
+OBJS	= $(FUNCTION:.c=.o)
 
-all: $(NAME)
+# La libreria
+HEADER	= ft_printf.h
 
-$(NAME): $(OBJECTS) $(HEADER)
-	@ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+# Se compila el archivo binario (ejecutable).
+all: ${NAME}
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+# Se compila los objetos con las librerias y archivos.
+# ${NAME}: ${OBJS} ${HEADER}
+# 	@echo "ejecutando ${NAME}"
+# 	$(CC) $(FLAGS) main.c ${OBJS} -o ${NAME}
 
+# Si no tuvieramos main.c usariamos el ar rcs en su lugar.
+${NAME}: ${OBJS} ${HEADER}
+	@echo "Generando la libreria ${NAME}..."
+	ar rcs $(NAME) ${OBJS}
+
+# Mirar google TODO
+%.o: %.c ${HEADER} Makefile 
+	@echo "Compilando el objeto $@..."
+	@$(CC) -c $(FLAGS) $< -o $@
+#	gcc -c -Wall -Wextra -Werror ...
+# $@  = (todos los .o)
+# $< = (Todos los inputs, seria todos los .c y su header (.h))
+# -c es para convertir los .c en .o (.o = objetos, listos para usar)
+
+# -f es para decir que si no existen ignoralos (evitando avisos como de errores innecesarios.)
 clean:
-	rm -f $(OBJECTS)
+	@echo "Ejecutando clean..."
+	@rm -f $(OBJS) 
 
 fclean: clean
-	rm -f $(NAME)
+	@echo "Ejecutando fclean..."
+	@rm -f $(NAME)
 
 re: fclean all
+	@echo "Ejecutando re..."
 
-.PHONY: re  all clean fclean bonus
+# Le dice al make que estos nombre no son archivos
+.PHONY: re fclean clean all

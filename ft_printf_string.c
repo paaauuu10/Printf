@@ -1,26 +1,20 @@
 #include <unistd.h>
 #include <stdio.h>
 
-/*size_t	ft_strlen(const char *s)
+void	ft_printf_string(char *str, int **ret_num)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	if (!str)
+		str = "(null)";
+	while (*str)
+	{
+		if (write(1, str++, 1) == -1)
+		{
+			**ret_num = -1;
+			return ;
+		}
+		(*(*ret_num))++;
+	}
 }
-
-
-int	ft_printf_string(char *str)
-{
-	int	ret_num;
-	
-	ret_num = write(1, str, ft_strlen(str));
-	if (ret_num == -1)
-		return (-1);
-	return (ret_num);	
-}*/
 
 /*int	main()
 {
