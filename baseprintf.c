@@ -24,9 +24,10 @@ static void ft_ret_num(const char *s, va_list args, int *ret_num, int i)
 				ft_printf_hexa_up(va_arg(args, unsigned int), ret_num);
 			else if (s[i] == '%')
 				ft_printf_char('%', ret_num);
-			else
-				ft_printf_char(s[i], ret_num);
 		}	
+		else
+			ft_printf_char(s[i], ret_num);
+			
 	}
 }
 

@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-void	ft_printf_hexa_low(long long int num, int *ret_num)
+void	ft_printf_hexa_low(unsigned long long int num, int *ret_num)
 {
 	char	*base;
 

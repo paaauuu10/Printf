@@ -16,14 +16,3 @@ void	ft_printf_string(char *str, int *ret_num)
 	}
 }
 
-/*int	main()
-{
-	char str[] = "How are you";
-	int	result;
-
-	result = printf("%s", str);
-	printf("\nResultat real = %d\n", result);
-	result = ft_printf_string(str);
-	printf("\nResultat propi = %d\n", result);
-	return (0);
-}*/
