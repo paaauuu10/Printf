@@ -6,7 +6,7 @@
 #    By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/28 10:44:14 by pbotargu          #+#    #+#              #
-#    Updated: 2023/10/19 13:40:59 by pbotargu         ###   ########.fr        #
+#    Updated: 2023/10/22 12:20:16 by pbotargu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ FLAGS = -Wall -Wextra -Werror
 NAME	= libftprintf.a
 
 # Archivos que uso al compilar
-FUNCTION	=  ft_printf_char.c baseprintf.c ft_printf_string.c ft_printf_id.c ft_printf_unsigned.c ft_printf_hexa_up.c ft_printf_hexa_low.c ft_printf_hexaptr.c				
+FUNCTION	= baseprintf.c ft_printf_char.c ft_printf_hexa_low.c ft_printf_hexa_up.c ft_printf_hexaptr.c ft_printf_id.c ft_printf_string.c ft_printf_unsigned.c 			
 
 # Tenemos que transformar los .c en .o para poder compilar
 OBJS	= $(FUNCTION:.c=.o)

@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void	ft_printf_string(char *str, int **ret_num)
+void	ft_printf_string(char *str, int *ret_num)
 {
 	if (!str)
 		str = "(null)";
@@ -9,10 +9,10 @@ void	ft_printf_string(char *str, int **ret_num)
 	{
 		if (write(1, str++, 1) == -1)
 		{
-			**ret_num = -1;
+			*ret_num = -1;
 			return ;
 		}
-		(*(*ret_num))++;
+		(*ret_num)++;
 	}
 }
 

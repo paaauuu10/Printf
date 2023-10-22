@@ -1,5 +1,5 @@
 #include <unistd.h>
-void    ft_printf_unsigned(unsigned int num, int **ret_num)
+void    ft_printf_unsigned(unsigned int num, int *ret_num)
 {
     char *base;
 
@@ -7,13 +7,13 @@ void    ft_printf_unsigned(unsigned int num, int **ret_num)
     if (num > 9)
     {
         ft_printf_unsigned(num / 10, ret_num);
-        if (*(*ret_num) == -1)
+        if ((*ret_num) == -1)
             return ;
     }
     if (write(1, &base[num % 10], 1) == -1)
     {
-        *(*ret_num) = -1;
+        (*ret_num) = -1;
         return ;
     }
-    (*(*ret_num))++;
+    (*ret_num)++;
 }
