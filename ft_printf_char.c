@@ -10,7 +10,7 @@ void	ft_printf_char(char c, int *ret_num)
 	(*ret_num)++;
 }
 
-int main(void)
+/*int main(void)
 {
     int resultado;
     int count = 0;
@@ -24,4 +24,4 @@ int main(void)
     ft_printf_char(' ', &count); // Llama a ft_printf_char para un tercer carácter.
     printf("Cantidad de caracteres impresos: %d\n", count);
     return (0);
-}
+}*/
