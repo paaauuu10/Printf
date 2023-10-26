@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 15:41:10 by mde-sara          #+#    #+#             */
-/*   Updated: 2023/10/22 13:01:14 by pbotargu         ###   ########.fr       */
+/*   Updated: 2023/10/24 12:21:07 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,3 @@ void	ft_printf_hexa_up(unsigned long long int num, int *ret_num)
 	}
 	((*ret_num))++;
 }
-

@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_char.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/24 12:20:01 by pbotargu          #+#    #+#             */
+/*   Updated: 2023/10/24 12:22:52 by pbotargu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include <stdio.h>
+
 void	ft_printf_char(char c, int *ret_num)
 {
 	if (write(1, &c, 1) == -1)
@@ -9,19 +22,3 @@ void	ft_printf_char(char c, int *ret_num)
 	}
 	(*ret_num)++;
 }
-
-/*int main(void)
-{
-    int resultado;
-    int count = 0;
-
-    resultado = printf("%c", '0');
-    printf("Cantidad de caracteres impresos: %d\n", resultado);
-
-    count = 0; // Reinicializa count a 0 antes de usarlo con ft_printf_char.
-    ft_printf_char('0', &count); // Llama a ft_printf_char para un solo carácter.
-    //ft_printf_char(' ', &count); // Llama a ft_printf_char para otro carácter.
-    //ft_printf_char(' ', &count); // Llama a ft_printf_char para un tercer carácter.
-    printf("Cantidad de caracteres impresos: %d\n", count);
-    return (0);
-}*/
