@@ -6,12 +6,11 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:20:01 by pbotargu          #+#    #+#             */
-/*   Updated: 2023/10/24 12:22:52 by pbotargu         ###   ########.fr       */
+/*   Updated: 2023/10/30 10:52:55 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 void	ft_printf_char(char c, int *ret_num)
 {

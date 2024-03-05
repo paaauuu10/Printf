@@ -6,7 +6,7 @@
 /*   By: pbotargu <pbotargu@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:19:57 by pbotargu          #+#    #+#             */
-/*   Updated: 2023/10/24 12:19:58 by pbotargu         ###   ########.fr       */
+/*   Updated: 2023/10/30 09:59:58 by pbotargu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	ft_ret_num(const char *s, va_list args, int *ret_num, int i)
 				ft_printf_hexa_up(va_arg(args, unsigned int), ret_num);
 			else if (s[i] == '%')
 				ft_printf_char('%', ret_num);
-		}	
+		}
 		else
 			ft_printf_char(s[i], ret_num);
 	}
